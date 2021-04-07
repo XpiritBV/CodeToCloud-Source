@@ -5,7 +5,7 @@ services:
     ports:
       - "3001:3001"
   web:
-    image: ghcr.io/renevanosnabrugge/fabrikam-web:latest
+    image: ghcr.io/lfraileorg/fabrikam-web:latest
     depends_on:
         - api
     environment:
