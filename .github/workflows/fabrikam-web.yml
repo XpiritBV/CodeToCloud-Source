@@ -1,0 +1,22 @@
+IMAGE_NAME: fabrikam-web
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:c
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      working-directory: content-web
+      run: docker build . --file Dockerfile --tag $IMAGE_NAME
+      
+    - name: Push image to GitHub Container Registry
+      working-directory: content-web
